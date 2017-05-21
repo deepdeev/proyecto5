@@ -16,14 +16,14 @@ export default class PercentCircle extends Component
       'green': '#47e495'
     };
 
-    let color = colors.pink;
+    let color = this.props.color||colors.pink;
 
-    let radius = 50;
-    let border = 5;
-    let padding = 30;
+    let radius = this.props.radius || 50;
+    let border = this.props.border || 5;
+    let padding = this.props.padding || 0;
     let startPercent = 0;
-    let endPercent = this.props.endPercent;
-
+    let endPercent = this.props.endPercent||100;
+    let fontSize = this.props.fontSize || '20px';
 
     let twoPi = Math.PI * 2;
     let formatPercent = d3.format('.0%');
@@ -81,17 +81,19 @@ export default class PercentCircle extends Component
     .attr('fill-opacity', 1);
 
     let numberText = meter.append('text')
-    .attr('fill', '#d6306d')
-    .attr('text-anchor', 'middle')
-    .attr('dy', '.35em');
-
-    let toneText = meter.append('text')
-    .attr('y','20')
-    .attr('fill', '#d6306d')
+    .attr('fill', '#fafafa')
     .attr('text-anchor', 'middle')
     .attr('dy', '.35em')
-    .text(this.props.toneName);
+    .attr('font-size',fontSize);
 
+    if(this.props.toneName)
+    {
+      let toneText = meter.append('text').attr('y', '20')
+      .attr('fill', '#fafafa')
+      .attr('text-anchor', 'middle')
+      .attr('dy', '.35em')
+      .text(this.props.toneName);
+    }
 
     function updateProgress(progress) {
       foreground.attr('d', arc.endAngle(twoPi * progress));

@@ -25,7 +25,7 @@
     closeCtrl.addEventListener('click', closeSearch);
     document.addEventListener('keyup', function(ev) {
       // escape key.
-      if( ev.keyCode == 27 ) {
+      if( ev.keyCode == 27 || ev.keyCode == 13) {
         closeSearch();
       }
     });

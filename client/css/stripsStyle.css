@@ -30,8 +30,8 @@
   /*left: 66.7vw;*/
 /*}*/
 .strips__strip:nth-child(1) .strip__content {
-  /*background: #244F75;*/
-  background: #60BFBF;
+  background: #2c312e;
+
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
   -webkit-animation-name: strip1;

@@ -3,37 +3,32 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 //My stuff
 import {Records} from '../api/Records.js';
-import Record from './Record.jsx';
-import NewQuery from './NewQuery.jsx';
-
-
+import ViewExplore from './ViewExplore.jsx';
+import ViewProfile from './ViewProfile.jsx';
 // App component - represents the whole app
 class App extends Component {
   constructor(props)
   {
     super(props);
     this.state = {
+      currentView:'',
 
     };
-
-  }
-  renderRecords() {
-    return this.props.records.map((currentRecord) => (
-        <Record key={currentRecord._id} record={currentRecord} />
-    ));
+    this.handleViewChange=this.handleViewChange.bind(this);
   }
 
+  handleViewChange(newView)
+  {
+    this.setState({currentView:newView});
+  }
   render() {
     return (
-        <div className="container-fluid">
-          <header>
-            <h1>Records</h1>
-          </header>
-          <div className="row records">
-            {this.renderRecords()}
-          </div>
-          <NewQuery />
-        </div>
+        <section className="strips">
+          <ViewExplore records={this.props.records} visible={this.state.currentView=='ViewExplore'} handleViewChange={this.handleViewChange}/>
+          <ViewProfile visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
+          <i className="fa fa-close strip__close"/>
+        </section>
+
     );
   }
 }
