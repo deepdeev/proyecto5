@@ -6,12 +6,15 @@ import {Records} from '../api/Records.js';
 import Record from './Record.jsx';
 import NewQuery from './NewQuery.jsx';
 
+
 // App component - represents the whole app
 class App extends Component {
   constructor(props)
   {
     super(props);
-    this.state = {};
+    this.state = {
+
+    };
 
   }
   renderRecords() {
@@ -22,14 +25,13 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container">
+        <div className="container-fluid">
           <header>
             <h1>Records</h1>
           </header>
-
-          <ul>
+          <div className="row records">
             {this.renderRecords()}
-          </ul>
+          </div>
           <NewQuery />
         </div>
     );
