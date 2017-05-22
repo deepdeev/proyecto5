@@ -46,6 +46,11 @@ body
     overflow-x: hidden;
     height: 85vh;
     margin-top: 15vh;
+    width: 80vw;
+}
+.strip__content .container-fluid
+{
+    width: 80vw;
 }
 ::-webkit-scrollbar
 {
