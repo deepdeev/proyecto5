@@ -12,6 +12,11 @@
     --fontColor3: #FF5722;
     --fontColor4: #5e5e5e;
 }
+body
+{
+    /*overflow-y: scroll;*/
+    /*overflow-x: hidden;*/
+}
 .recordBox div
 {
     padding-left: 0!important;
@@ -34,4 +39,28 @@
 {
     height: 50px;
     width: 50px;
+}
+.records
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85vh;
+    margin-top: 15vh;
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+::-webkit-scrollbar-track
+{
+    background-color: #eaeaea;
+    border-left: 0px solid #ccc;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: #aaa;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background-color:#5e5e5e;
 }

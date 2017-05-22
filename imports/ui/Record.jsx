@@ -44,7 +44,7 @@ export default class Record extends Component
   {
     this.props.record.feelings.document_tone.tone_categories[0].tones.sort((a,b)=>b.score-a.score);
     return (
-        <div className="col-md-3 row recordBox">
+        <div className="col-md-4 row recordBox">
           <div className="col-md-12">
             <h3>{this.props.record.query}</h3>
           </div>

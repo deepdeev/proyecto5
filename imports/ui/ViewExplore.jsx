@@ -30,7 +30,7 @@ export default class ViewExplore extends Component {
             <div className="strip__content" >
               <h1 className="strip__title" data-name="Lorem" >Explore</h1>
               <div className="container-fluid strip__inner-content">
-                <div className="row">
+                <div className="row records">
                   {this.renderRecords()}
                 </div>
               </div>
