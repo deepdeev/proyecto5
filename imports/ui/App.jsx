@@ -26,7 +26,7 @@ class App extends Component {
     return (
         <section className="strips">
           <ViewExplore records={this.props.records} visible={this.state.currentView=='ViewExplore'} handleViewChange={this.handleViewChange}/>
-          <ViewProfile visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
+          <ViewProfile records={this.props.records} visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
           <h3 className="strip__close" onClick={this.handleViewChange}><i className="fa fa-arrow-left"/> Home</h3>
         </section>
 

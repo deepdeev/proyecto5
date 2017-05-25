@@ -31,7 +31,7 @@ export default class ViewExplore extends Component {
   }
   renderPopularRecords() {
 
-    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,7).map((currentRecord) => (
+    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,9).map((currentRecord) => (
         <Record key={currentRecord._id} record={currentRecord} />
     ));
   }
