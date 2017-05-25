@@ -16,7 +16,8 @@ export default class ViewExplore extends Component {
       this.props.handleViewChange('ViewExplore');
   }
   renderRecords() {
-    return this.props.records.map((currentRecord) => (
+  // .slice(0,6)
+    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,6).map((currentRecord) => (
         <Record key={currentRecord._id} record={currentRecord} />
     ));
   }
@@ -31,6 +32,9 @@ export default class ViewExplore extends Component {
               <h1 className="strip__title" data-name="Lorem" >Explore</h1>
               <div className="container-fluid strip__inner-content">
                 <div className="row records">
+                  <div className="col-md-12 row sectionTitle">
+                    <h2>Popular</h2>
+                  </div>
                   {this.renderRecords()}
                 </div>
               </div>

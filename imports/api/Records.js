@@ -10,62 +10,6 @@ import Twitter from "twitter";
 export const Records = new Mongo.Collection('records');
 
 
-// Meteor.methods({
-//   'newQuery'(newQuery)
-//   {
-//     check(newQuery, String);
-//     console.log('arrive the new query: ' +newQuery);
-//
-//     //Twitter Stuff
-//     let client = new Twitter({
-//       consumer_key: 'RkHsyzt7mqV8AkyB1bEco6gjb',
-//       consumer_secret: 'laPxm7JGQQ6Y404g9G7isa7ntFv1kHw9jFofMBHuE2fQXEXqwE',
-//       access_token_key: '824384893429891074-RRK2G55hTohv3SXq7k02pUi5zF8tyMG',
-//       access_token_secret: 'FCVkRiCRBrCuyZt9bG7SZwM9R01yanZ0bPTITxcvmZp79'
-//     });
-//     // var client = new Twitter({
-//     //   consumer_key: process.env.TWITTER_CONSUMER_KEY,
-//     //   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-//     //   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-//     //   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-//     // });
-//
-//     //Make the search in Twitter, and assemble the whole text
-//     let wholeText='';
-//     client.get('search/tweets',{q:newQuery}).then(
-//         (tweets)=>{
-//           console.log('Entro1');
-//           tweets.statuses.forEach((currentTweet)=> {
-//                 wholeText+=currentTweet.text+'\n';
-//           });
-//           console.log('Salio1');
-//           Records.insert({twitterText:wholeText});
-//           //Watson stuff
-//           let watson = require('watson-developer-cloud');
-//           let tone_analyzer = watson.tone_analyzer({
-//             username: 'cad4dd01-cbfe-4296-bb22-03b6020b4455',
-//             password: 'oF2rWPl45JkA',
-//             version: 'v3',
-//             version_date: '2016-05-19'
-//           });
-//           console.log('Texto enviado a WATSON: '+wholeText);
-//           tone_analyzer.tone({
-//             text: wholeText
-//           }).then( function(err, tone) {
-//             console.log('Entro al then');
-//             if (err) {
-//               console.log(err);
-//             } else {
-//               console.log('Entro al tone_analyzer');
-//               let feels = JSON.stringify(tone, null, 2);
-//               Records.insert({feels:feels});
-//             }
-//           });
-//         }
-//     );
-//   }
-// });
-
 Meteor.methods({
   'newQuery'(newQuery)
   {
@@ -117,11 +61,12 @@ Meteor.methods({
               Records.rawCollection().insert(
                   {
                     query: newQuery,
-                    feelings: tone,
                     lastModification:new Date(),
                     numTweets:tweets.statuses.length,
                     favs:0,
-                    upvotes:0
+                    upvotes:0,
+                    feelings: tone,
+
                   }
               );
               return tone;

@@ -25,14 +25,14 @@ export default class Record extends Component
       if(higher)
       {
         return (
-            <div key={paramId + 'key'} className="col-md-6">
+            <div key={paramId + 'key'} className="col-md-6 higherPercentCircle">
               <PercentCircle idElement={paramId} endPercent={tone.score} toneName={tone.tone_name} radius={60} color={this.colors[tone.tone_name]} border={5} padding={3} fontSize='40px'/>
             </div>
         );
       }
       else {
         return (
-            <div key={paramId + 'key'} className="col-md-6">
+            <div key={paramId + 'key'} className="col-md-6 littlePercentCircle">
               <PercentCircle idElement={paramId} endPercent={tone.score} radius={25} color={this.colors[tone.tone_name]} border={2} padding={3} fontSize='15px'/>
               <p className="toneName">{tone.tone_name}</p>
             </div>
@@ -48,7 +48,7 @@ export default class Record extends Component
           <div className="col-md-12">
             <h3>{this.props.record.query}</h3>
           </div>
-          <div className="col-md-8 row">
+          <div className="col-md-6 row">
             {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[0],true)}
             <div className="col-md-1 row">
             </div>
@@ -58,7 +58,7 @@ export default class Record extends Component
             <div className="col-md-1 row">
             </div>
           </div>
-            <div className="col-md-4 row ">
+            <div className="col-md-6 row ">
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[1])}
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[2])}
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[3])}

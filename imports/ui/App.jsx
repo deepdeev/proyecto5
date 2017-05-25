@@ -39,6 +39,6 @@ App.propTypes={
 export default createContainer(()=>
 {
   return {
-    records: Records.find({}).fetch()
+    records: Records.find({},{sort:{lastModification:-1}}).fetch()
   };
 }, App);

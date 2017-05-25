@@ -17,21 +17,28 @@ body
     /*overflow-y: scroll;*/
     /*overflow-x: hidden;*/
 }
+.sectionTitle
+{
+text-align: left;
+}
 .records
 {
+    position: fixed!important;
+    top:-35vh;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 85vh;
     /*margin-top: 15vh;*/
     width: 80vw;
-    margin: 15vh 5vw 0 0;
+    /*margin: 15vh 5vw 0 0;*/
+    z-index: 10;
 }
 .recordBox
 {
-    margin: 5px 5px 5px 5px;
+    margin: 5px 0.5% 5px 0.7%;
     background-color: #2c312e!important;
     /*background-color: #02bdd5!important;*/
-    width: 30%!important;
+    width: 32%!important;
 }
 
 .recordBox div
@@ -42,6 +49,21 @@ body
     margin-right: 0!important;
 
 }
+.littlePercentCircle
+{
+    /*padding-left: 0!important;*/
+    /*padding-right: 0!important;*/
+    /*margin-left: 0!important;*/
+    margin-right: 20px!important;
+    width: 40%;
+}
+.higherPercentCircle
+{
+    /*padding-left: 0!important;*/
+    /*padding-right: 0!important;*/
+    /*margin-left: 0!important;*/
+    /*margin-right: 0!important;*/
+}
 .recordBox .toneName
 {
     text-align: center;
@@ -49,6 +71,7 @@ body
     line-height: 1.05;
     font-size: 0.9em;
 }
+
 .hidden
 {
     display: none!important;
