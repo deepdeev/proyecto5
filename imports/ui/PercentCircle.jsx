@@ -109,7 +109,7 @@ export default class PercentCircle extends Component
       if (count > 0) {
         count--;
         progress += step;
-        setTimeout(loops, 30);
+        setTimeout(loops, 35);
       }
     })();
   }

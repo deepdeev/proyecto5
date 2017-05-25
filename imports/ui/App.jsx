@@ -11,7 +11,7 @@ class App extends Component {
   {
     super(props);
     this.state = {
-      currentView:'',
+      currentView:'Home',
 
     };
     this.handleViewChange=this.handleViewChange.bind(this);
@@ -19,14 +19,15 @@ class App extends Component {
 
   handleViewChange(newView)
   {
-    this.setState({currentView:newView});
+
+    this.setState({currentView:newView||'Home'});
   }
   render() {
     return (
         <section className="strips">
           <ViewExplore records={this.props.records} visible={this.state.currentView=='ViewExplore'} handleViewChange={this.handleViewChange}/>
           <ViewProfile visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
-          <i className="fa fa-close strip__close"/>
+          <h3 className="strip__close" onClick={this.handleViewChange}><i className="fa fa-arrow-left"/> Home</h3>
         </section>
 
     );

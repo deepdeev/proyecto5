@@ -226,11 +226,11 @@
     font-size: 28px;
   }
 }
-
+/*LM*/
 .strip__close {
   position: absolute;
-  right: 3vw;
-  top: 3vw;
+  left: 3vw;
+  top: 2vw;
   opacity: 0;
   z-index: 10;
   -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);

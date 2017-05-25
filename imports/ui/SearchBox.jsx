@@ -9,6 +9,7 @@ export default class SearchBox extends Component
     super(props);
 
     this.handleSubmit=this.handleSubmit.bind(this);
+
   }
   handleSubmit(event)
   {
@@ -18,7 +19,7 @@ export default class SearchBox extends Component
 
     Meteor.call('newQuery',newQuery);
     ReactDOM.findDOMNode(this.refs.newQuery).value='';
-
+    this.props.addSearch();
   }
   render()
   {

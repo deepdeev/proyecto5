@@ -17,17 +17,29 @@ body
     /*overflow-y: scroll;*/
     /*overflow-x: hidden;*/
 }
+.strip__content .container-fluid
+{
+    /*position: fixed!important;*/
+    /*top:-35vh;*/
+    width: 100vw;
+    height: 85vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 0 0 11vw;
+    margin-top: 10vh;
+}
 .sectionTitle
 {
 text-align: left;
 }
 .records
 {
-    position: fixed!important;
-    top:-35vh;
-    overflow-y: scroll;
+    /*position: fixed!important;*/
+    /*top:-35vh;*/
+    /*left:11vw ;*/
+    overflow-y: hidden;
     overflow-x: hidden;
-    height: 85vh;
+    /*height: 85vh;*/
     /*margin-top: 15vh;*/
     width: 80vw;
     /*margin: 15vh 5vw 0 0;*/
@@ -82,18 +94,14 @@ text-align: left;
     width: 50px;
 }
 
-.strip__content .container-fluid
-{
-    width: 80vw;
-}
 ::-webkit-scrollbar
 {
-    width: 0px;
+    width: 12px;
 }
 ::-webkit-scrollbar-track
 {
     background-color: #eaeaea;
-    border-left: 0px solid #ccc;
+    border-left: 2px solid #ccc;
 }
 ::-webkit-scrollbar-thumb
 {
