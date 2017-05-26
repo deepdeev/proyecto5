@@ -42,7 +42,7 @@ export default class ViewExplore extends Component {
       return (
           <article className="strips__strip" >
             <SearchBox visible={true} addSearch={this.addSearch}/>
-            <div className="strip__content" >
+            <div className="strip__content strip__content2" >
               <h1 className="strip__title" data-name="Lorem" >Explore</h1>
               <div className="container-fluid strip__inner-content">
                 <div className="row records explore ">

@@ -25,7 +25,7 @@ export default class Login extends Component {
   }
   render () {
     return(
-      <div>
+        <div onClick={()=>{return false;}}>
         {
           this.props.isLogged ?
           <div/>
@@ -35,7 +35,7 @@ export default class Login extends Component {
         					<form onSubmit={this.handleSubmit}>
         							<input id="login-email" type="text" placeholder="Email"  required=""/>
         							<input id="login-password" type="password" placeholder="Password"  required=""/>
-        						<input type="submit" value="Login"/>
+        						<input type="submit" value="Login" className="TileBtnActivate"/>
         					</form>
 
         			</div>
