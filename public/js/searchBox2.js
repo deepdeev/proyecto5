@@ -12,9 +12,9 @@
 
   'use strict';
 
-  var closeCtrl = document.getElementById('btn-search-close'),
-      searchContainer = document.querySelector('.search'),
-      inputSearch = searchContainer.querySelector('.search__input');
+  var closeCtrl = document.getElementById('btn-search-close2'),
+      searchContainer = document.querySelector('.search2'),
+      inputSearch = searchContainer.querySelector('.search__input2');
 
   function init() {
     initEvents();
@@ -45,3 +45,4 @@
   init();
 
 })(window);
+

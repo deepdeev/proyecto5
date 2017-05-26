@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Record from './Record.jsx';
-import SearchBox from './SearchBox.jsx';
+import SearchBox2 from './SearchBox2.jsx';
 
 export default class ViewProfile extends Component {
   constructor(props){
@@ -11,13 +11,14 @@ export default class ViewProfile extends Component {
     this.renderPopularRecords=this.renderPopularRecords.bind(this);
     this.handleViewChange=this.handleViewChange.bind(this);
     this.renderRecentRecords=this.renderRecentRecords.bind(this);
+    this.renderUserRecord=this.renderUserRecord.bind(this);
 
     this.addSearch=this.addSearch.bind(this);
   }
   //This function is temporal
   addSearch()
   {
-    if(this.state.searches<=3)
+    if(this.state.searches<=2)
       this.setState({searches:this.state.searches+1});
   }
   handleViewChange()
@@ -32,8 +33,14 @@ export default class ViewProfile extends Component {
   }
   renderPopularRecords() {
 
-    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,9).map((currentRecord) => (
-        <Record key={currentRecord._id} record={currentRecord} />
+    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,6).map((currentRecord) => (
+        <Record key={currentRecord._id} record={currentRecord} size="col-md-6"/>
+    ));
+  }
+  renderUserRecord() {
+
+    return this.props.records.sort((a,b)=>{return b.upvotes-a.upvotes}).slice(0,1).map((currentRecord) => (
+        <Record key={currentRecord._id} record={currentRecord} size="col-md-12" type="userRecord"/>
     ));
   }
   render()
@@ -42,16 +49,16 @@ export default class ViewProfile extends Component {
     {
       return (
           <article className="strips__strip" >
-            <SearchBox visible={true} addSearch={this.addSearch}/>
-            <div className="strip__content" >
+            <SearchBox2 visible={true} addSearch={this.addSearch}/>
+            <div className="strip__content profile" >
               <h1 className="strip__title" data-name="Lorem" >Profile</h1>
               <div className="container-fluid strip__inner-content">
-                <div className="row records">
+                <div className="col-md-8 row records profile">
                   {this.state.searches>0?
                       <div className="col-md-12 row sectionTitle">
                         <h2>Recent Searches</h2>
                       </div>:
-                      <span className="hidden"></span>
+                      <span className="hidden"/>
                   }
 
                   {this.renderRecentRecords()}
@@ -59,6 +66,15 @@ export default class ViewProfile extends Component {
                     <h2>Popular</h2>
                   </div>
                   {this.renderPopularRecords()}
+                </div>
+                <div className="col-md-4 row profile-info">
+                  <div className="col-md-12 row sectionTitle">
+                    <h2>Luis Mesa</h2>
+                    <h5>@luisMesa25</h5>
+                  </div>
+                  <div className="col-md-12 row userRecord">
+                    {this.renderUserRecord()}
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,9 +85,10 @@ export default class ViewProfile extends Component {
     {
       return (
           <article className="strips__strip" >
-            <SearchBox visible={false}/>
+            <SearchBox2 visible={false}/>
             <div className="strip__content" onClick={this.handleViewChange}>
               <h1 className="strip__title" data-name="Lorem" >Profile</h1>
+              <p className="strip__title mainTitle2" >LINGS</p>
             </div>
           </article>
       );

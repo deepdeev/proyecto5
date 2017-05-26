@@ -9,6 +9,7 @@ Meteor.startup(() => {
   $.getScript('../../js/bootstrap.js', function(){});
   $.getScript('../../js/strips.js', function(){});
   $.getScript('../../js/searchBox.js', function(){});
+  $.getScript('../../js/searchBox2.js', function(){});
   $.getScript('../../js/main.js', function(){});
   render(<App />, document.getElementById('render-target'));
 });

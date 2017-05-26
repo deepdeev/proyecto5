@@ -1,5 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Londrina+Solid:400|Lato:700,400|Karla:400';
 /*Colors Variables*/
-
 :root {
     --mainColor1: #fafafa;
     --mainColor2: #ecf0f1;
@@ -12,10 +12,15 @@
     --fontColor3: #FF5722;
     --fontColor4: #5e5e5e;
 }
+@font-face {
+    font-family: 'Gruppo';
+    src: url('/fonts/gruppo/Gruppo-Regular.ttf');
+}
 body
 {
     /*overflow-y: scroll;*/
     /*overflow-x: hidden;*/
+    font-family: "Lato", sans-serif!important;
 }
 .strip__content .container-fluid
 {
@@ -30,9 +35,9 @@ body
 }
 .sectionTitle
 {
-text-align: left;
+    text-align: left;
 }
-.records
+.records.explore
 {
     /*position: fixed!important;*/
     /*top:-35vh;*/
@@ -44,15 +49,29 @@ text-align: left;
     width: 80vw;
     /*margin: 15vh 5vw 0 0;*/
     z-index: 10;
+
 }
-.recordBox
+.explore .recordBox
 {
     margin: 5px 0.5% 5px 0.7%;
     background-color: #2c312e!important;
     /*background-color: #02bdd5!important;*/
     width: 32%!important;
 }
-
+.profile .recordBox
+{
+    margin: 5px 0.5% 5px 0.7%;
+    /*background-color: #2c312e!important;*/
+    background-color: #244f75!important;
+    width: 48%!important;
+}
+.userRecord .recordBox
+{
+    margin: 5px 0.5% 5px 0.7%;
+    /*background-color: #2c312e!important;*/
+    background-color: #244f75!important;
+    width: 100%!important;
+}
 .recordBox div
 {
     padding-left: 0!important;
@@ -69,6 +88,14 @@ text-align: left;
     margin-right: 20px!important;
     width: 40%;
 }
+.userRecord .littlePercentCircle
+{
+    /*padding-left: 0!important;*/
+    /*padding-right: 0!important;*/
+    /*margin-left: 0!important;*/
+    margin-right: 1px!important;
+    width: 24%;
+}
 .higherPercentCircle
 {
     /*padding-left: 0!important;*/
@@ -83,7 +110,32 @@ text-align: left;
     line-height: 1.05;
     font-size: 0.9em;
 }
-
+.profile-info
+{
+    position: relative;
+    top:0;
+    right: 0;
+}
+.mainTitle2
+{
+    position: absolute;
+    left: 0;
+    top: 5vh;
+    text-align: left;
+    font-family: "Londrina Solid", display;
+    font-size: 10vw;
+    /*color: #2c312e!important;*/
+}
+.mainTitle1
+{
+    position: absolute;
+    right: 0;
+    top: 5vh;
+    text-align: right;
+    font-family: "Londrina Solid", display;
+    font-size: 10vw;
+    /*color: #244f75!important;*/
+}
 .hidden
 {
     display: none!important;

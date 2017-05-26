@@ -83,12 +83,14 @@ export default class PercentCircle extends Component
     let numberText = meter.append('text')
     .attr('fill', '#fafafa')
     .attr('text-anchor', 'middle')
-    .attr('dy', '.35em')
-    .attr('font-size',fontSize);
+    .attr('dy', '.20em')
+    .attr('font-size',fontSize)
+    .attr('font-family','Gruppo');
 
     if(this.props.toneName)
     {
-      let toneText = meter.append('text').attr('y', '20')
+      let toneText = meter.append('text')
+      .attr('y', '30')
       .attr('fill', '#fafafa')
       .attr('text-anchor', 'middle')
       .attr('dy', '.35em')
