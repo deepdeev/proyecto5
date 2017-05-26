@@ -86,8 +86,9 @@ Meteor.methods({
     console.log("llega a love");
     Records.update({_id: recordId }, { $inc: { upvotes: 1 }} );
   },
-  'recentForCurrentUser'()
+  'addRecordToUser'(query)
   {
-    console.log("llega a recent for current user");
-  },
+    let owner = Meteor.userId();
+    Meteor.users.update({_id: owner }, {$push: { "profile.owned": query }});
+  }
 });

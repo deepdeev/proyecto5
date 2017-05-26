@@ -18,6 +18,7 @@ export default class SearchBox2 extends Component
     let newQuery = ReactDOM.findDOMNode(this.refs.newQuery2).value.trim();
 
     Meteor.call('newQuery',newQuery);
+    Meteor.call('addRecordToUser', newQuery);
     ReactDOM.findDOMNode(this.refs.newQuery2).value='';
     this.props.addSearch();
   }

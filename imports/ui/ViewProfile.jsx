@@ -4,6 +4,8 @@ import SearchBox2 from './SearchBox2.jsx';
 import Signup from './Signup.jsx';
 import Login from './Login.jsx';
 
+import { Mongo } from "meteor/mongo";
+
 export default class ViewProfile extends Component {
   constructor(props){
     super(props);
@@ -33,7 +35,20 @@ export default class ViewProfile extends Component {
     this.props.handleViewChange('ViewProfile');
   }
   renderRecentRecords() {
-    return this.props.records.sort((a,b)=>{return b.lastModification-a.lastModification}).slice(0,this.state.searches).map((currentRecord) => (
+    let userRecentNames = this.props.currentUser.profile.owned;
+
+    let userRecents = [];
+    this.props.records.forEach( (record) =>{
+      for(let i = 0; i < userRecentNames.length; i++){
+
+        if(record.query === userRecentNames[i]){
+          userRecents.push(record);
+        }
+      }
+    });
+
+    console.log(userRecents);
+    return userRecents.sort((a,b)=>{return b.lastModification-a.lastModification}).slice(0,this.state.searches).map((currentRecord) => (
         <Record key={currentRecord._id} record={currentRecord} />
     ));
   }
