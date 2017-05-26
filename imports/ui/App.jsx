@@ -32,8 +32,8 @@ class App extends Component {
     this.setState({currentView:newView||'Home'});
   }
   render() {
-    console.log("log de props del app");
-    console.log(this.props);
+    //console.log("log de props del app");
+    //console.log(this.props);
     return (
         <section className="strips">
           { this.props.currentUser ?

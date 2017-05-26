@@ -12,7 +12,7 @@ export default class Signup extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e){
-    console.log("evento sale disparado");
+    //console.log("evento sale disparado");
     e.preventDefault();
     let email = document.getElementById('register-email').value;
     let twitterUsername = document.getElementById('register-twitter-username').value;
@@ -32,8 +32,8 @@ export default class Signup extends Component {
     //console.log("pasa changeToLogin en handle submit");
   }
   render () {
-    console.log("props es");
-    console.log(this.props);
+    //console.log("props es");
+    //console.log(this.props);
     return(
       <div>
         {
