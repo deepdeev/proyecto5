@@ -21,7 +21,9 @@ export default class Signup extends Component {
     email: email,
     password: password,
     profile: {
-      username: twitterUsername
+      username: twitterUsername,
+      favorites: [],
+      owned: []
     }
 
     });

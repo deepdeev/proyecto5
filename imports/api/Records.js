@@ -64,6 +64,7 @@ Meteor.methods({
                     lastModification:new Date(),
                     numTweets:tweets.statuses.length,
                     favs:0,
+                    loves:0,
                     upvotes:0,
                     feelings: tone,
 
@@ -73,5 +74,17 @@ Meteor.methods({
             }
           });
         });
-  }
+  },
+  'favorite'(recordId)
+  {
+    let owner = this.userId;
+    let username = Meteor.users.findOne(this.userId).username;
+    console.log("hace favorito de " + username);
+    Records.update({_id: recordId }, {$push: { scores: recordId }});
+  },
+  'love'(recordId)
+  {
+    console.log("llega a love");
+    Records.update({_id: recordId }, { $inc: { love: 1 }} );
+  },
 });
