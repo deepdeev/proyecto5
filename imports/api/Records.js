@@ -76,10 +76,10 @@ Meteor.methods({
   },
   'favorite'(recordId)
   {
-    let owner = this.userId;
-    let username = Meteor.users.findOne(this.userId).username;
-    console.log("hace favorito de " + username);
-    Records.update({_id: owner }, {$push: { favorites: recordId }});
+    let owner = Meteor.userId();
+    console.log(owner);
+    console.log("hace favorito de " + owner);
+    Meteor.users.update({_id: owner }, {$push: { "profile.favorites": recordId }});
   },
   'love'(recordId)
   {
