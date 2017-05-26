@@ -7,7 +7,7 @@ export default class Signup extends Component {
     super(props);
     this.state = {
       error: '',
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -35,7 +35,7 @@ export default class Signup extends Component {
     //console.log("props es");
     //console.log(this.props);
     return(
-      <div>
+      <div onClick={()=>{return false;}}>
         {
           this.props.isLogged ?
           <div>Logeado</div>
@@ -49,7 +49,7 @@ export default class Signup extends Component {
         							<div className="clearfix"></div>
         							<input id="register-password" type="password" placeholder="Password"  required=""/>
         							<div className="clearfix"></div>
-        						<input type="submit" value="Signup"/>
+        						<input type="submit" value="Signup" className="TileBtnActivate"/>
         					</form>
 
         	</div>

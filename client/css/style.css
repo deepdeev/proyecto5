@@ -167,17 +167,19 @@ body
    margin-top: 10px;
    color: #000;
    letter-spacing:2px;
+    z-index: 200;
 }
 .login h3{
    margin-top: 10px;
    color: #f2ecec;
-   letter-spacing:2px;
+
 }
 
 .signup{
    margin-top: 10px;
    color: #000;
    letter-spacing:2px;
+
 }
 
 .signup h3{
