@@ -33,7 +33,7 @@ export default class Record extends Component
   {
     let query =this.props.record._id;
 
-    let paramId='r-'+query+'-'+tone.tone_id+'uT';
+    let paramId='uTr-'+query+'-'+tone.tone_id+'uT';
     if(higher)
     {
       return (
@@ -87,12 +87,9 @@ export default class Record extends Component
             </div>
             <div className="col-md-12 row">
               {this.renderUserTone(this.props.record.feelings.document_tone.tone_categories[0].tones[0], true)}
-              <div className="col-md-1 row">
-              </div>
-              <div className="col-md-10 row">
+              <div className="col-md-12 row recordBox-info">
+                {this.props.record.upvotes} Upvotes
 
-              </div>
-              <div className="col-md-1 row">
               </div>
             </div>
             <div className="col-md-12 row ">
@@ -113,12 +110,9 @@ export default class Record extends Component
             </div>
             <div className="col-md-6 row">
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[0], true)}
-              <div className="col-md-1 row">
-              </div>
-              <div className="col-md-10 row">
+              <div className="col-md-12 row recordBox-info">
+                {this.props.record.upvotes} Upvotes
 
-              </div>
-              <div className="col-md-1 row">
               </div>
             </div>
             <div className="col-md-5 row ">

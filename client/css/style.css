@@ -187,6 +187,12 @@ body
    color: #f2ecec;
    letter-spacing:2px;
 }
+.recordBox-info
+{
+    text-align: center;
+    margin-rigth: 15px!important;
+    padding-rigth: 20px!important;
+}
 ::-webkit-scrollbar
 {
     width: 12px;
