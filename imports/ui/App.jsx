@@ -5,6 +5,9 @@ import {createContainer} from 'meteor/react-meteor-data';
 import {Records} from '../api/Records.js';
 import ViewExplore from './ViewExplore.jsx';
 import ViewProfile from './ViewProfile.jsx';
+import Signup from './Signup.jsx';
+import Login from './Login.jsx';
+
 // App component - represents the whole app
 class App extends Component {
   constructor(props)
@@ -15,6 +18,12 @@ class App extends Component {
 
     };
     this.handleViewChange=this.handleViewChange.bind(this);
+    this.logout= this.logout.bind(this);
+  }
+
+  logout() {
+      console.log("se ejecuta logout");
+      Meteor.logout();
   }
 
   handleViewChange(newView)
@@ -23,10 +32,23 @@ class App extends Component {
     this.setState({currentView:newView||'Home'});
   }
   render() {
+    console.log("log de props del app");
+    console.log(this.props);
     return (
         <section className="strips">
+          { this.props.currentUser ?
+            <a role="button" data-toggle="collapse" href="#" onClick={this.logout}> Log out</a>
+            :
+            <div>
+              <Signup isLogged={this.props.currentUser}/>
+              <Login isLogged={this.props.currentUser}/>
+            </div>
+
+           }
+           <ViewProfile records={this.props.records} visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
           <ViewExplore records={this.props.records} visible={this.state.currentView=='ViewExplore'} handleViewChange={this.handleViewChange}/>
-          <ViewProfile records={this.props.records} visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
+
+
           <h3 className="strip__close" onClick={this.handleViewChange}><i className="fa fa-arrow-left"/> Home</h3>
         </section>
 
@@ -34,12 +56,14 @@ class App extends Component {
   }
 }
 App.propTypes={
-  records:PropTypes.array.isRequired
+  records:PropTypes.array.isRequired,
+  currentUser: PropTypes.object,
 };
 
 export default createContainer(()=>
 {
   return {
-    records: Records.find({},{sort:{lastModification:-1}}).fetch()
+    records: Records.find({},{sort:{lastModification:-1}}).fetch(),
+    currentUser: Meteor.user(),
   };
 }, App);

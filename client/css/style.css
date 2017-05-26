@@ -136,6 +136,9 @@ body
     font-size: 10vw;
     /*color: #244f75!important;*/
 }
+.signup{
+  z-index: 20;
+}
 .hidden
 {
     display: none!important;
@@ -144,6 +147,29 @@ body
 {
     height: 50px;
     width: 50px;
+}
+
+.login{
+   margin-top: 10px;
+   color: #000;
+   letter-spacing:2px;
+}
+.login h3{
+   margin-top: 10px;
+   color: #f2ecec;
+   letter-spacing:2px;
+}
+
+.signup{
+   margin-top: 10px;
+   color: #000;
+   letter-spacing:2px;
+}
+
+.signup h3{
+   margin-top: 10px;
+   color: #f2ecec;
+   letter-spacing:2px;
 }
 
 ::-webkit-scrollbar
