@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import Record from './Record.jsx';
 import SearchBox2 from './SearchBox2.jsx';
 
+import { Mongo } from "meteor/mongo";
+
 export default class ViewProfile extends Component {
   constructor(props){
     super(props);

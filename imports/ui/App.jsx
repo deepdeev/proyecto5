@@ -46,7 +46,7 @@ class App extends Component {
 
           }
 
-           <ViewProfile records={this.props.records} visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
+           <ViewProfile records={this.props.records} currentUser={this.props.currentUser} visible={this.state.currentView=='ViewProfile'} handleViewChange={this.handleViewChange}/>
            <ViewExplore records={this.props.records} visible={this.state.currentView=='ViewExplore'} handleViewChange={this.handleViewChange}/>
 
 
