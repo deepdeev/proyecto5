@@ -79,8 +79,8 @@ export default class ViewProfile extends Component {
                     </div>
                     <div className="col-md-4 row profile-info">
                         <div className="col-md-12 row sectionTitle">
-                  <h2>Luis Mesa</h2>
-                  <h5>@luisMesa25</h5>
+                  <h2>Donald</h2>
+                  <h5>@realDonaldTrump</h5>
                   </div>
                   <div className="col-md-12 row userRecord">
                 {this.renderUserRecord()}

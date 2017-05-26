@@ -5,7 +5,7 @@ export default class ViewExplore extends Component {
   constructor(props){
     super(props);
     this.state={
-      searches:0
+      searches:0,
     };
     this.renderPopularRecords=this.renderPopularRecords.bind(this);
     this.handleViewChange=this.handleViewChange.bind(this);
