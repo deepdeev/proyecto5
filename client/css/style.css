@@ -149,6 +149,20 @@ body
     width: 50px;
 }
 
+
+.btn-love, .btn-fav
+{
+    height: 15px;
+    padding-left: 0!important;
+    margin-left: 0!important;
+    margin-bottom: 20px;
+    cursor:pointer;
+}
+.fa-heart, .fa-star
+{
+    color: #fafafa;
+}
+
 .login{
    margin-top: 10px;
    color: #000;
@@ -171,7 +185,6 @@ body
    color: #f2ecec;
    letter-spacing:2px;
 }
-
 ::-webkit-scrollbar
 {
     width: 12px;
