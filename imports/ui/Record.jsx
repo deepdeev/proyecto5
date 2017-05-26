@@ -22,10 +22,12 @@ export default class Record extends Component
   love()
   {
     console.log('Love');
+    Meteor.call('love',this.props.record._id);
   }
   fav()
   {
     console.log('Fav');
+    Meteor.call('favorite',this.props.record._id);
   }
   renderUserTone(tone, higher)
   {

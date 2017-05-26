@@ -19,7 +19,7 @@ export default class SearchBox extends Component
 
     Meteor.call('newQuery',newQuery);
     ReactDOM.findDOMNode(this.refs.newQuery).value='';
-    this.props.addSeac
+    this.props.addSearch();
   }
   render()
   {
