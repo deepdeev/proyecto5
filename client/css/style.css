@@ -146,6 +146,18 @@ body
     width: 50px;
 }
 
+.btn-love, .btn-fav
+{
+    height: 15px;
+    padding-left: 0!important;
+    margin-left: 0!important;
+    margin-bottom: 20px;
+    cursor:pointer;
+}
+.fa-heart, .fa-star
+{
+    color: #fafafa;
+}
 ::-webkit-scrollbar
 {
     width: 12px;

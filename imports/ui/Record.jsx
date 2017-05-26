@@ -16,7 +16,16 @@ export default class Record extends Component
 
     this.renderTone=this.renderTone.bind(this);
     this.renderUserTone=this.renderUserTone.bind(this);
-
+    this.love=this.love.bind(this);
+    this.fav=this.fav.bind(this);
+  }
+  love()
+  {
+    console.log('Love');
+  }
+  fav()
+  {
+    console.log('Fav');
   }
   renderUserTone(tone, higher)
   {
@@ -110,11 +119,16 @@ export default class Record extends Component
               <div className="col-md-1 row">
               </div>
             </div>
-            <div className="col-md-6 row ">
+            <div className="col-md-5 row ">
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[1])}
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[2])}
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[3])}
               {this.renderTone(this.props.record.feelings.document_tone.tone_categories[0].tones[4])}
+            </div>
+            <div className="col-md-1 row">
+              <span className="col-md-12 btn-love" onClick={this.love}><i className="fa fa-heart"/></span>
+              <span className="col-md-12 btn-fav" onClick={this.fav}><i className="fa fa-star"/></span>
+
             </div>
           </div>
       );
