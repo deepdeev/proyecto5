@@ -123,6 +123,7 @@ export default class ViewProfile extends Component {
             <SearchBox2 visible={false}/>
             <div className="strip__content" onClick={this.handleViewChange}>
               <h1 className="strip__title" data-name="Lorem" >Profile</h1>
+              <p className="strip__title mainText2" data-name="Lorem" >Find your most recent searches and find how the public feels about you.</p>
               <p className="strip__title mainTitle2" >LINGS</p>
             </div>
           </article>

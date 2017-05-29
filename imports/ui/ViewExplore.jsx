@@ -44,6 +44,7 @@ export default class ViewExplore extends Component {
             <SearchBox visible={true} addSearch={this.addSearch}/>
             <div className="strip__content strip__content2" >
               <h1 className="strip__title" data-name="Lorem" >Explore</h1>
+              <p className="strip__title" data-name="Lorem" >Explore how the public feels about  Obama, Clinton, Trump and events such as Manchester bombing. You can search anything you want.</p>
               <div className="container-fluid strip__inner-content">
                 <div className="row records explore ">
                   {this.state.searches>0?
@@ -71,6 +72,7 @@ export default class ViewExplore extends Component {
             <SearchBox visible={false}/>
             <div className="strip__content" onClick={this.handleViewChange}>
               <h1 className="strip__title" data-name="Lorem" >Explore</h1>
+              <p className="strip__title mainText1" >Explore how the public feels about  Obama, Clinton, Trump and events such as Manchester bombing. You can search anything you want.</p>
               <p className="strip__title mainTitle1" >TWEE</p>
             </div>
           </article>

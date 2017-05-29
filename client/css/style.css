@@ -136,6 +136,14 @@ body
     font-size: 10vw;
     /*color: #244f75!important;*/
 }
+.mainText1, .mainText2
+{
+    font-size: 1.2vw;
+    display: block;
+    position: absolute;
+    margin-top: 10vh;
+    padding: 0 5vw 0 5vw;
+}
 .signup{
   z-index: 20;
 }
